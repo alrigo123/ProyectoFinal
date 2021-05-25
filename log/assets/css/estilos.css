@@ -1,0 +1,68 @@
+.panel-title {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+#main {
+  margin-top: 100px;
+}
+
+.u-size-100 {
+  width: 100px;
+  text-align: center;
+}
+
+.main-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.panel-info > .panel-heading {
+  color: #ffffff;
+  background-color: #e95420;
+}
+.main-login {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.footer {
+  margin-top: 100px;
+}
+
+.nombre-plato {
+  font-size: 15px;
+  margin: 0;
+  font-weight: bold;
+  line-height: 0.7em;
+}
+.glyphicon-shopping-cart {
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 10px;
+  word-spacing: -12px;
+}
+
+.btn-block {
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+}
+#titulo-pagina {
+  font-family: "Lora", serif;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  font-size: 24px;
+  color: white;
+}
+#titulo-pagina:hover {
+  color: #18bc9c;
+}
+#bad{
+  color:red;
+  transform: translate(0em,-27em);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  word-spacing: .5px;
+  letter-spacing: .5px;
+}

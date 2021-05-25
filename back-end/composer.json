@@ -1,0 +1,26 @@
+{
+"name" : "fast/tienda-online",
+"description": "Creacion de fastfood para linea",
+"type": "project",
+"license": "MIT",
+"authors": [
+    {
+        "name": "Alex Estrada Cuba",
+        "email": "018100599c@uandina.edu.pe"
+    },
+    {
+        "name": "Mirco Paullo Olivera",
+        "email": "018101181b@uandina.edu.pe"
+    }
+],
+"require": {
+
+},
+"autoload": {
+    "psr-4": {
+        "FastFood\\":"src/"
+    }
+}
+
+
+}

@@ -1,0 +1,83 @@
+section.awSlider .carousel {
+  display: table;
+  z-index: 2;
+}
+
+section.awSlider {
+  margin: 30px auto;
+  padding: 30px;
+  position: relative;
+  display: table;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.awSlider h2 {
+  text-align: center;
+}
+
+section.awSlider:hover > img {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+section.awSlider img {
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+section.awSlider > img {
+  position: absolute;
+  top: 30px;
+  z-index: 1;
+  transition: all 0.3s;
+  filter: blur(1.8vw);
+  -webkit-filter: blur(2vw);
+  -moz-filter: blur(2vw);
+  -o-filter: blur(2vw);
+  -ms-filter: blur(2vw);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0;
+  border-radius: 20px;
+}
+.carousel-caption h2 {
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 18px;
+}
+.carousel-caption {
+  text-align: center;
+  align-items: center;
+}
+.botoon {
+  margin-bottom: 40px;
+}
+.botoon a {
+  color: white;
+  font-size: 20px;
+}
+button {
+  outline: none;
+  border: 3px solid rgb(224, 131, 43);
+  background-color: rgb(224, 131, 43);
+  transform: translateX(850px);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+}
+#right {
+  border-radius: 20px;
+  border-left: 1px dashed white;
+}
+#left {
+  border-radius: 20px;
+  border-right: 1px dashed white;
+}

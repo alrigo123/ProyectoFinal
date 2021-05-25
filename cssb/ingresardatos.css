@@ -1,0 +1,43 @@
+.grupo {
+  background: red;
+  color: blue;
+}
+#administrador {
+  margin-top: 5px;
+  background: rgb(30, 144, 20);
+  border-radius: 40px;
+}
+#administrador:hover {
+  background: rgb(33, 163, 22);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  outline: 2px transparent red;
+}
+#administrador:focus {
+  background: rgb(33, 163, 22);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  outline: 2px none red;
+  border: 0.5px solid rgb(33, 163, 22);
+}
+
+.letra_admin {
+  font-family: "Lora", serif;
+  font-family: "Orelega One", cursive;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  font-weight: bolder;
+  color: white;
+  text-decoration: none;
+}
+.letra_admin:hover {
+  color: white;
+  text-decoration: none;
+}
+#titulo-pagina{
+  font-family: 'Lora', serif;
+font-family: 'Merriweather', serif;
+  color: #000;;
+}
