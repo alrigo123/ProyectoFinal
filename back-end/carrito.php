@@ -92,9 +92,9 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
                     <th>Orden</th>
                     <th>Plato</th>
                     <th>Imagen</th>
-                    <th>Precio</th>
+                    <th>Precio Unitario</th>
                     <th class="text-center">Cantidad</th>
-                    <th>Total</th>
+                    <th>Sub Total</th>
                     <th class="text-center">Actualizar/Eliminar</th>
                 </tr>
                 </thead>
@@ -152,10 +152,10 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
                         <td colspan="7">No tiene platos seleccionados..
                         </td>
                     </tr>
-                    
+
                     <div id="agregar" class="pull-left">
-                                <a href="indexCarta.php" class="btn btn-info">Agregar Platos</a>
-                            </div>
+                        <a href="indexCarta.php" class="btn btn-info">Agregar Platos</a>
+                    </div>
                 <?php
 
                 }
@@ -177,10 +177,10 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
         ?>
             <div class="row">
                 <div class="pull-left">
-                    <a href="indexCarta.php" class="btn btn-info">Seguir comprando</a>
+                    <a href="indexCarta.php" class="btn btn-info">Agregar Platos</a>
                 </div>
                 <div class="pull-right">
-                    <a href="datoscliente.php" class="btn btn-success">Finalizar compra</a>
+                    <a href="datoscliente.php" class="btn btn-success">Confirmar Pedido</a>
                 </div>
 
             </div>

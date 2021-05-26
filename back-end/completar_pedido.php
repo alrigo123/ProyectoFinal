@@ -2,36 +2,36 @@
 
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] ==='POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     require 'funciones.php';
     require 'vendor/autoload.php';
 
-    if(isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])){
+    if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
         $cliente = new FastFood\Cliente;
-    
+
         $_params = array(
             'Nombre' => $_POST['Nombre'],
             'Apellido' => $_POST['Apellido'],
             'Correo' => $_POST['Correo'],
             'Celular' => $_POST['Celular'],
             'Direccion' => $_POST['Direccion']
-            
+
         );
-    
+
         $cliente_id = $cliente->registrar($_params);
-    
+
         $pedido = new FastFood\Pedido;
-    
+
         $_params = array(
             'Total' => calcularTotal(),
             'FechaPedido' => date('Y-m-d'),
-            'Id_Cliente'=>$cliente_id
+            'Id_Cliente' => $cliente_id
         );
-        
+
         $pedido_id =  $pedido->registrar($_params);
 
-        foreach($_SESSION['carrito'] as $indice => $value){
+        foreach ($_SESSION['carrito'] as $indice => $value) {
             $_params = array(
                 "IdPlato" => $value['Id_Plato'],
                 "IdPedido" => $pedido_id,
@@ -45,8 +45,5 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
         $_SESSION['carrito'] = array();
 
         header('Location: pago/pago.php');
-
     }
-
-
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'funciones.php';
 ?>
@@ -45,7 +45,7 @@ require 'funciones.php';
   </nav>
 
   <div class="container" id="main">
-<!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
+    <!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
     <div class="row">
       <?php
       require 'vendor/autoload.php';
