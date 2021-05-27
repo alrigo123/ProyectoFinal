@@ -1,0 +1,9 @@
+.jumbotron{
+    background:transparent;
+    width: 90%;
+    margin: auto;
+}
+#botones{
+    border: 1px none red;
+    margin-top: 18px;
+}

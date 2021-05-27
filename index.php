@@ -1,7 +1,6 @@
 <?php
 include './layouts/header.php';
 ?>
-<h1>Parece que funciona el logout</h1>
 <section class="banner">
     <div class="container">
         <div class="row">
