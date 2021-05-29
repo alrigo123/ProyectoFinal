@@ -73,7 +73,7 @@ p {
   padding: 0;
   z-index: 10000;
   transition: all 0.2s ease-in-out;
-  background-color: #eaf0ff;
+  background-color: #000000;
   text-align: center;
 }
 
@@ -110,21 +110,20 @@ p {
 }
 
 .navbar-nav li {
-  margin: 0px 20px;
+  margin: 10px 20px;
 }
 
 .navbar-nav li a {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   text-transform: uppercase;
-  color: #363e50 !important;
+  color: #ffffff !important;
   letter-spacing: 0.5px;
 }
 
 .header.active {
-  background-color: #eaf0ff;
-}
-.navbar-inverse {
+  background-color: #000000;}
+  .navbar-inverse {
   background-image: none;
   background-color: transparent;
 }
@@ -155,8 +154,9 @@ bootstrap.min.css: 5 .navbar-toggle {
 }
 
 .banner {
+  margin-top:30px;
   padding: 70px 0px;
-  background-image: url(../img/anti_pollo.JPG);
+  background-image: url(../img/sarten.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -1036,9 +1036,12 @@ section.map #map {
     left: 0%;
     text-align: center;
     overflow: hidden;
-    background-color: rgba(250, 250, 250, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     margin: 0px -15px;
     border-top: none;
+  }
+  #titulo-pagina{
+    color: #fff;
   }
   .nav {
     list-style: none;

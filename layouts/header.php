@@ -38,7 +38,7 @@ http://www.templatemo.com/tm-507-victory
 <body>
     <div class="header">
         <div class="container">
-            <a  id="titulo-pagina" href="#" class="navbar-brand scroll-top" target="_blank">FastFood Spartan</a>
+            <a  id="titulo-pagina" style="color:#fff;" href="#" class="navbar-brand scroll-top" target="_blank">FastFood Spartan</a>
             <nav class="navbar navbar-inverse" role="navigation">
                 <div class="navbar-header">
                     <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
