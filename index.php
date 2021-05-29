@@ -21,7 +21,7 @@ include './layouts/header.php';
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
                 <div class="first-image">
-                    <img src="img/cook_01.jpg" alt="">
+                    <img src="img/salchiclasica.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-4">
@@ -39,7 +39,7 @@ include './layouts/header.php';
             </div>
             <div class="col-md-3">
                 <div class="second-image">
-                    <img src="img/cook_02.jpg" alt="">
+                    <img src="img/salchiburger.jpg" alt="">
                 </div>
             </div>
         </div>

@@ -224,6 +224,7 @@ body {
 	padding: 5px 12px;
 	transition: .3s ease all;
 	border-radius: 5px;
+	text-align: center;
 }
 
 .formulario-tarjeta input:hover,

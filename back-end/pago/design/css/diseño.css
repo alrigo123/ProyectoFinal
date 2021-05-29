@@ -7,3 +7,23 @@
     border: 1px none red;
     margin-top: 18px;
 }
+.triple{
+    border: 1px none red;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    margin-bottom:30px;
+    display:block;
+}
+.triple a{
+    margin:10px 15px;
+}
+
+#btnTerminar:hover{
+    background-color: #317709;
+    border-color: #317709;
+}
+#btnTerminar:focus{
+    background-color: #317709;
+    border-color: #317709;
+}

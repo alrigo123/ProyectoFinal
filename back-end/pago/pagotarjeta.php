@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarritoFastFood</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -119,28 +118,28 @@
 		<form action="../index.html" id="formulario-tarjeta" class="formulario-tarjeta">
 			<div class="grupo">
 				<label for="inputNumero">Número Tarjeta VISA</label>
-				<input type="text" id="inputNumero" maxlength="19" autocomplete="off" required>
+				<input type="text" id="inputNumero" maxlength="19" autocomplete="off" >
 			</div>
 			<div class="grupo">
 				<label for="inputNombre">Nombre</label>
-				<input type="text" id="inputNombre" maxlength="19" autocomplete="off" required>
+				<input type="text" id="inputNombre" maxlength="19" autocomplete="off" >
 			</div>
 			<div class="grupo">
 				<label for="inputCorreo">Correo Electronico</label>
-				<input type="email" id="inputCorreo" maxlength="19" autocomplete="off" required>
+				<input type="email" id="inputCorreo" maxlength="19" autocomplete="off" >
 			</div>
 			<div class="flexbox">
 				<div class="grupo expira">
 					<label for="selectMes">Expiracion</label>
 					<div class="flexbox">
 						<div class="grupo-select">
-							<select name="mes" id="selectMes" required>
+							<select name="mes" id="selectMes" >
 								<option disabled selected>Mes</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
 						</div>
 						<div class="grupo-select">
-							<select name="year" id="selectYear" required>
+							<select name="year" id="selectYear" >
 								<option disabled selected>Año</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
@@ -150,11 +149,11 @@
 
 				<div class="grupo ccv">
 					<label for="inputCCV">CCV</label>
-					<input type="text" id="inputCCV" maxlength="3" required>
+					<input type="text" id="inputCCV" maxlength="3" >
 				</div>
 			</div>
-			<a href="pago.php">
-				<input type="submit" class="btn-enviar" onclick="validarCorreo(form.inputCorreo.value)" name="Pagar" value="Pagar">
+			<a href="dp.php">
+				<input type="" class="btn-enviar" onclick="validarCorreo(form.inputCorreo.value)" name="Pagar" value="Pagar">
 			</a>
 
 			<script>

@@ -1,3 +1,6 @@
+<?php 
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +56,7 @@
             <a class="btn btn-info btn-lg btn-block" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Pago con tarjeta VISA</a>
         </div>
         <div id="botones" class="col-md-3 align-items-center">
-            <a class="btn btn-info btn-lg btn-block" href="#" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega</a>
+            <a class="btn btn-info btn-lg btn-block" href="dp.php" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega</a>
         </div>
     </div>
 
