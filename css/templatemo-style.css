@@ -569,7 +569,7 @@ section.sign-up {
 }
 
 footer {
-  background-color: #363e50;
+  background-color: #000000;
   line-height: 130px;
   text-align: center;
 }
@@ -1105,7 +1105,7 @@ section.map #map {
     margin-top: 20px;
   }
   footer {
-    background-color: #363e50;
+    background-color: #000000;
     line-height: 40px;
     text-align: center;
   }

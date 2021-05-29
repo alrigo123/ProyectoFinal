@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" href="img/1.jpg" />
+    <link rel="icon" href="img/fast.png" />
     <!--
 Victory Template
 http://www.templatemo.com/tm-507-victory
 -->
-    <title>Victory CSS Web Template</title>
+    <title>FastFood Spartan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -51,10 +51,10 @@ http://www.templatemo.com/tm-507-victory
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Inicio</a></li>
-                        <li><a href="menu.php">Nuestra Carta</a></li>
-                        <li><a href="back-end/indexCarta.php">Ordenar</a></li>
-                        <li><a href="contact.php">Nosotros</a></li>
+                        <li><a style="font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold;" href="index.php">Inicio</a></li>
+                        <li><a style="font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold;" href="menu.php">Nuestra Carta</a></li>
+                        <li><a style="font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold;" href="back-end/indexCarta.php">Ordenar</a></li>
+                        <li><a style="font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold;" href="contact.php">Nosotros</a></li>
 
                         <button id="administrador" type="button" class="btn btn-success"><a href="./log/indexLogin.php" class="letra_admin">Administrador +</a></button>
 
