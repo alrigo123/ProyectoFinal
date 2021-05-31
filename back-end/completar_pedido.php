@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require 'vendor/autoload.php';
 
     if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
+
         $cliente = new FastFood\Cliente;
 
         $_params = array(
@@ -21,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $cliente_id = $cliente->registrar($_params);
 
+        //------
+
         $pedido = new FastFood\Pedido;
 
         $_params = array(
@@ -30,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
 
         $pedido_id =  $pedido->registrar($_params);
+
+        //------------
 
         foreach ($_SESSION['carrito'] as $indice => $value) {
             $_params = array(
@@ -42,7 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pedido->registrarDetalle($_params);
         }
 
+
+
         $_SESSION['carrito'] = array();
+
+
+
+
 
         header('Location: pago/pago.php');
     }

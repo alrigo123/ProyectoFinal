@@ -11,6 +11,10 @@ function agregarPlato($resultado,$id,$cantidad=1){
     );
     }
 
+
+/*
+Funcion donde actualizamos datos del plato en el carrito ,$id que es del get y la cantidad que aun no se sabe
+*/
 function actualizarPlato($id,$cantidad= FALSE){
 
     if($cantidad){
@@ -24,6 +28,8 @@ function actualizarPlato($id,$cantidad= FALSE){
     }
 
 
+
+
 function calcularTotal(){
 
     $total =0;
@@ -35,6 +41,9 @@ function calcularTotal(){
     return $total;
     
     }
+
+
+
 function cantidadPlatos(){
     $cantidad =0;
     if(isset($_SESSION['carrito'])){

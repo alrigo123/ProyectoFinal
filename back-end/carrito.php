@@ -7,8 +7,10 @@ require 'funciones.php';
 
 if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
     $id = $_GET['Id_Plato'];
+
     require 'vendor/autoload.php';
     $plato = new FastFood\Plato;
+    
     $resultado = $plato->mostrarPorId($id);
 
     if (!$resultado)
@@ -16,11 +18,11 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 
 
 
-
-    if (isset($_SESSION['carrito'])) { //Si la sesion del carrito existe
+        
+        //Si la sesion del carrito existe
+    if (isset($_SESSION['carrito'])) {  
         //Si el el producto existe en el carrito
         if (array_key_exists($id, $_SESSION['carrito'])) {
-
             actualizarPlato($id);
         } else {
             //Si el el producto no existe en el carrito
@@ -84,6 +86,7 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
         </div>
     </nav>
 
+
     <div class="container" id="main">
         <table class="table table-bordered table-hover">
             <thead>
@@ -121,6 +124,7 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
                                     <?php } else { ?>
                                         <img src="assets/imagenes/not-found.jpg" width="35">
                                     <?php } ?>
+
                                 </td>
                                 <td>S/. <?php print $value['Precio'] ?></td>
                                 <td class="col-xs-2">

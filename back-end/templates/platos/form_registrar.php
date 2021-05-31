@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
   <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -44,20 +43,19 @@
             </ul>
           </li>
         </ul>
-
-
-
-
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
+
+
 
   <div class="container" id="main">
     <div class="row">
       <div class="col-md-12">
         <fieldset>
           <legend>Datos del Plato</legend>
+          
           <!-- Inicio Formulario -->
           <form method="post" action="../acciones.php" enctype="multipart/form-data">
             <div class="row">

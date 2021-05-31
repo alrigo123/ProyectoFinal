@@ -1,10 +1,12 @@
 <?php
 require '../vendor/autoload.php';
-
+//Esta requiriendo datos de Plato
 $plato = new FastFood\Plato;
 
+//metodo post por el formulario en boton submit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    //Value Registrar con name accion
     if ($_POST['accion'] === 'Registrar') {
 
         if (empty($_POST['NombrePlato']))
@@ -37,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
+    //llamando medainte el boton ,accion lo iogualamos a su value del frm con name accion con composer
     if ($_POST['accion'] === 'Actualizar') {
 
         if (empty($_POST['NombrePlato']))
@@ -75,6 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+
+
+//Llamamos a la funcionn Eliminar de la Clase plato donde obentenemos mediante GET
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $id = $_GET['Id_Plato'];

@@ -8,6 +8,7 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 
 
   $plato = new FastFood\Plato;
+
   $resultado = $plato->mostrarPorId($id);
   //print '<pre>';
   //print_r($resultado);
@@ -44,7 +45,9 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
   <link rel="stylesheet" href="../../assets/css/estilos.css">
 </head>
 
+
 <body>
+
 
   <!-- Fixed navbar (Responsive) -->
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -73,14 +76,14 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
             </ul>
           </li>
         </ul>
-
-
-
-
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
+
+
+
+  
   <!-- Formulario de Actualizacion -->
   <div class="container" id="main">
     <div class="row">
@@ -141,7 +144,7 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Imagen</label>
-                  <input type="file" class="form-control" name="Imagen">
+                  <input type="file" class="form-control" name="Imagen" required>
                   <input type="hidden" name="foto_temp" value="<?php print $resultado['Imagen'] ?>">
                 </div>
               </div>

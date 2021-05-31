@@ -157,7 +157,7 @@
             </fieldset>
             <div class="triple">
                 <a href="#" class="btn btn-info btn-md hidden-print">Enviar a mi Correo</a>
-                <a href="javascript:;" id="btnImprimir" class="btn btn-md btn-danger hidden-print">Imprimir</a>
+                <a href="javascript:;" onclick="window.print()" id="btnImprimir" class="btn btn-md btn-danger hidden-print">Imprimir</a>
                 <a href="#" id="btnTerminar" class="btn btn-primary hidden-print">Terminar</a>
             </div>
 

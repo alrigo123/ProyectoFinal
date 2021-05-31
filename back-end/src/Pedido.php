@@ -84,6 +84,10 @@ class Pedido
         return false;
     }
 
+
+
+    //este puede ser
+
     public function mostrarPorId($id)
     {
         $sql = "SELECT p.Id_Pedido, Nombre, Apellido, Correo, Direccion, Total, FechaPedido FROM pedido p 
@@ -103,7 +107,7 @@ class Pedido
     }
 
 
-
+    //este tambien puede ser
     public function mostrarDetallePorIdPedido($id)
     {
         $sql = "SELECT 

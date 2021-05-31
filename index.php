@@ -5,8 +5,8 @@ include './layouts/header.php';
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h4>Encuentra Nuestras Comidas</h4>
-                <h2>FastFoodSpartan Restaurant</h2>
+                <h4>Encuentra Comidas Rapidas</h4>
+                <h2>FastFood Spartan</h2>
                 <p>Servicio delivery de la comida que deseas</p>
                 <div class="primary-button">
                     <a href="back-end/indexCarta.php" data-id="book-table">Ordenar Ahora</a>
@@ -26,7 +26,7 @@ include './layouts/header.php';
             </div>
             <div class="col-md-4">
                 <div class="cook-content">
-                    <h4>Comida Deliciosa</h4>
+                    <h4>Delicious Food</h4>
                     <div class="contact-content">
                         <span>Puedes Llamarnos:</span>
                         <h6>+51 917 078 016</h6>

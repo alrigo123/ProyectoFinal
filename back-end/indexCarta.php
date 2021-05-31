@@ -44,6 +44,8 @@ require 'funciones.php';
     </div>
   </nav>
 
+
+
   <div class="container" id="main">
     <!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
     <div class="row">
@@ -51,6 +53,7 @@ require 'funciones.php';
       require 'vendor/autoload.php';
       $plato = new FastFood\Plato;
       $info_platos = $plato->mostrar();
+      
       $cantidad = count($info_platos);
       if ($cantidad > 0) {
         for ($x = 0; $x < $cantidad; $x++) {
@@ -67,6 +70,7 @@ require 'funciones.php';
               </div>
               <div class="panel-body">
                 <?php
+                
                 $foto = 'upload/' . $item['Imagen'];
 
                 if (file_exists($foto)) {
