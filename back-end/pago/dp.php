@@ -1,9 +1,22 @@
+<?php 
+session_start();
 
+if (isset($_SESSION['carrito'])) {  
+  //Si el el producto existe en el carrito
+  echo 'work';
+  } else {
+    echo 'do not work';
+    die;
+   // header('Location: ../../index.php');
+  }
+//usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
@@ -39,37 +52,60 @@
           <div class="col-md-12">
             <fieldset>
                 <?php
-                    require '../vendor/autoload.php';
+                     require '../vendor/autoload.php';
 
-                    $id = $_GET['Id_Pedido'];
-                    $pedido = new FastFood\Pedido;
+                     $pago = new FastFood\Pago;
 
-                   $info_pedido = $pedido->mostrarPorId($id);
+                     $info_pedido = $pago->mostrarPedido();
 
-                   $info_detalle_pedido = $pedido->mostrarDetallePorIdPedido($id);
+                     $info_detalle_pedido = $pago->mostrarDetallePedido();
 
+                     $info_correo = $pago->mostrarCorreo();
+      
+                      $cantidad = count($info_correo);
+                      if ($cantidad > 0) {
+                        for ($x = 0; $x < $cantidad; $x++) {
+                          $item = $info_correo[$x];
+                      
+    ?>
 
-
-                ?>
 
 
                 <legend>Información de su Compra</legend>
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input value="<?php print $info_pedido['Nombre'] ?>" type="text" class="form-control" readonly>
+                    <input value="<?php print $item['Nombre'] ?>" type="text" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <label>Correo Electronico</label>
-                    <input value="<?php print $info_pedido['Correo'] ?>" type="text" class="form-control" readonly>
+                    <input value="<?php print $item['Correo'] ?>" type="text" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <label>Direccion</label>
-                    <input value="<?php print $info_pedido['Direccion'] ?>" type="text" class="form-control" readonly>
+                    <input value="<?php print $item['Direccion'] ?>" type="textarea" class="form-control" readonly>
                 </div>
                 <div class="form-group">
-                    <label>Fecha Detalle de Pago</label>
-                    <input value="<?php print $info_pedido['FechaPedido'] ?>" type="text" class="form-control" readonly>
+                    <label>Numero de celular</label>
+                    <input value="<?php print $item['Celular'] ?>" type="text" class="form-control" readonly>
                 </div>
+                <?php }} ?>
+
+<?php 
+ $cantidad = count($info_pedido);
+ if ($cantidad > 0) {
+   for ($x = 0; $x < $cantidad; $x++) {
+     $item = $info_pedido[$x];
+?>
+
+                <div class="form-group">
+                    <label>Fecha Detalle de Pago</label>
+                    <input value="<?php print $item['FechaPedido'] ?>" type="text" class="form-control" readonly>
+                </div>
+
+                <?php }} ?>
+
+
+
                 <div class="form-group">
                     <label>Tipo de Pago</label>
                     <input value="Tarjeta o contra enetrega" type="text" class="form-control" readonly>
@@ -98,12 +134,11 @@
                    
                     
                       $cantidad = count($info_detalle_pedido);
-                      if($cantidad > 0){
-                        $c=0;
-                      for($x =0; $x < $cantidad; $x++){
-                        $c++;
-                        $item = $info_detalle_pedido[$x];
-                        $total = $item['PrecioUnit'] * $item['Cantidad'];
+                    if ($cantidad > 0) {
+                      $c=0;
+                  for ($x = 0; $x < $cantidad; $x++) {
+                    $c++;
+                  $item = $info_detalle_pedido[$x];
                         
                     ?>
 
@@ -114,7 +149,7 @@
                       <td><?php print $item['NombrePlato']?></td>
                       <td>
                       <?php
-                          $foto = '../../upload/'.$item['Imagen'];
+                          $foto = '../upload/'.$item['Imagen'];
                           if(file_exists($foto)){
                         ?>
                           <img src="<?php print $foto; ?>" width="35">
@@ -122,43 +157,45 @@
                           SIN FOTO
                       <?php }?>
                       </td>
-                      <td><?php print $item['PrecioUnit']?> PEN</td>
+                      <td>S/. <?php print $item['Precio']?> </td>
                       <td><?php print $item['Cantidad']?></td>
-                    <td>
-                    <?php print $total?>
+                    <td>S/. 
+                    <?php print $item['TotalP']?>
                     </td>
                     </tr>
 
-                    <?php
-                      }
-                    }else{
-                      
-                      //print $item['NombrePlato'];
-                     // die;
-                    ?>
                     <tr>
-                      <td colspan="6">NO HAY REGISTROS</td>
+                    
                       
                     </tr>
-
-                    <?php }?>
+                    <?php 
+                  }}
+                ?>
+                  
                   
                   
                   </tbody>
 
+                  
                 </table>
                 <div class="col-md-3">
                     <div class="form-group">
+                    <!-- este total el final -->
                         <label>Total Compra</label>
-                        <input value="<?php print $info_pedido['Total'] ?>" type="text" class="form-control" readonly>
+                        <input value="S/.  <?php print $item['Total'] ?>" type="text" class="form-control" readonly>
                     </div>
                 </div>
                 
+                
             </fieldset>
             <div class="triple">
-                <a href="#" class="btn btn-info btn-md hidden-print">Enviar a mi Correo</a>
+            <form action="enviar_correo.php"  method="post">
+                <input type="submit" id="a" class="btn btn-info btn-md hidden-print" value="Enviar a mi correo">
                 <a href="javascript:;" onclick="window.print()" id="btnImprimir" class="btn btn-md btn-danger hidden-print">Imprimir</a>
-                <a href="#" id="btnTerminar" class="btn btn-primary hidden-print">Terminar</a>
+            </form>
+            <form action="">
+                <a href="logout.php" id="btnTerminar" class="btn btn-primary hidden-print">Terminar</a>
+            </form>
             </div>
 
             

@@ -1,10 +1,24 @@
 <?php 
 session_start();
+
+if (isset($_SESSION['carrito'])) {  
+    //Si el el producto existe en el carrito
+    echo 'work';
+    } else {
+      echo "doesn't work";
+      die;
+    }
+
+    require '../vendor/autoload.php';
+    $pago = new FastFood\Pago;
+    $info_correo = $pago->mostrarCorreo();
+    print $va
  ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +64,21 @@ session_start();
 <br>
 <!-- BODY TEXT -->
     <div class="jumbotron">
-        <h3 class="display-4">Correo de envio: <input type="text" value="example@gmail.com" disabled></h3>
+    <?php 
+    
+      
+     $cantidad = count($info_correo);
+     if ($cantidad > 0) {
+       for ($x = 0; $x < $cantidad; $x++) {
+         $item = $info_correo[$x];
+    }
+    ?>
+        <h3 class="display-4">Correo de envio: <input type="text" value="<?php print $item['Correo'] ?>" disabled></h3>
+<?php 
+     }else{
+         echo 'Error';
+     }
+?>
         <h1 class="display-4">Seleccionar <strong class="b_bold">METODO DE PAGO</strong></h1>
         <div id="botones" class="col-md-3 align-items-center">
             <a class="btn btn-info btn-lg btn-block" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Pago con tarjeta VISA</a>

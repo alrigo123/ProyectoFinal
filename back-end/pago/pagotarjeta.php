@@ -1,7 +1,18 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['carrito'])) {  
+    //Si el el producto existe en el carrito
+    echo "Sesion validad";
+    } else {
+        echo "Sesion no valida";
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
