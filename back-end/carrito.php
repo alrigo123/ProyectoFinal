@@ -129,9 +129,9 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
                                     <input id="cantidad" type="text" name="cantidad" class="form-control u-size-100" value="<?php echo $value['cantidad'] ?> ">
                                 </td>
                                 <td>
-                                    S/. <?php 
-                                    print $total ?>
-                                    
+                                    S/. <?php
+                                        print $total;  ?>
+
                                 </td>
                                 <td id="iconos" class="col-xs-2">
                                     <div class="acciones">

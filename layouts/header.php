@@ -56,7 +56,7 @@ http://www.templatemo.com/tm-507-victory
                         <li><a style="font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold;" href="back-end/indexCarta.php">Ordenar</a></li>
                         <li><a style="font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold;" href="contact.php">Nosotros</a></li>
 
-                        <button id="administrador" type="button" class="btn btn-success"><a href="./log/indexLogin.php" class="letra_admin">Administrador +</a></button>
+                        <a class="btn btn-success btn-md" style="width:150px;height: 35px; align-items: center;margin-top:18px; font-size:16px; font-family: 'Lora', serif; font-family: 'Orelega One', cursive;font-family: 'Roboto Slab', serif; font-weight:bold; letter-spacing:1px;" href="./log/indexLogin.php" role="button">Administrador</a>
 
                     </ul>
                 </div>
