@@ -7,10 +7,8 @@ require 'funciones.php';
 
 if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
     $id = $_GET['Id_Plato'];
-
     require 'vendor/autoload.php';
     $plato = new FastFood\Plato;
-    
     $resultado = $plato->mostrarPorId($id);
 
     if (!$resultado)
@@ -18,11 +16,11 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 
 
 
-        
-        //Si la sesion del carrito existe
-    if (isset($_SESSION['carrito'])) {  
+
+    if (isset($_SESSION['carrito'])) { //Si la sesion del carrito existe
         //Si el el producto existe en el carrito
         if (array_key_exists($id, $_SESSION['carrito'])) {
+
             actualizarPlato($id);
         } else {
             //Si el el producto no existe en el carrito
@@ -66,6 +64,7 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -73,9 +72,9 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="titulo-pagina" class="navbar-brand" href="indexCarta.php">Menu Platos</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <a id="titulo-pagina" class="navbar-brand" href="indexCarta.php">Menu Platos</a>
                 <ul class="nav navbar-nav pull-right">
                     <li>
                         <a id="car" href="carrito.php" class="btn"><i class="fas fa-shopping-cart"></i> CARRITO <span id="icon" class="badge"><?php print cantidadPlatos(); ?></span></a>
@@ -85,7 +84,6 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
             <!--/.nav-collapse -->
         </div>
     </nav>
-
 
     <div class="container" id="main">
         <table class="table table-bordered table-hover">
@@ -124,15 +122,16 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
                                     <?php } else { ?>
                                         <img src="assets/imagenes/not-found.jpg" width="35">
                                     <?php } ?>
-
                                 </td>
                                 <td>S/. <?php print $value['Precio'] ?></td>
                                 <td class="col-xs-2">
                                     <input type="hidden" name="Id_Plato" value="<?php print $value['Id_Plato'] ?>">
-                                    <input id="cantidad" type="text" name="cantidad" class="form-control u-size-100" value="<?php print $value['cantidad'] ?> ">
+                                    <input id="cantidad" type="text" name="cantidad" class="form-control u-size-100" value="<?php echo $value['cantidad'] ?> ">
                                 </td>
                                 <td>
-                                    S/. <?php print $total ?>
+                                    S/. <?php 
+                                    print $total ?>
+                                    
                                 </td>
                                 <td id="iconos" class="col-xs-2">
                                     <div class="acciones">

@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require 'funciones.php';
 ?>
@@ -12,7 +12,8 @@ require 'funciones.php';
   <title>FastFoodSpartan</title>
   <meta name="description" content="">
   <meta name="author" content="">
-
+  
+  <link rel="stylesheet" href="../cssb/footer.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/estilos.css">
   <script src="https://kit.fontawesome.com/74c4c07f2a.js" crossorigin="anonymous"></script>
@@ -24,6 +25,7 @@ require 'funciones.php';
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
+    <!-- <a  id="" href="#" style="color:#fff;" class="navbar-brand scroll-top" target="_blank">FastFood Spartan</a> -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -31,9 +33,9 @@ require 'funciones.php';
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a id="titulo-pagina" class="navbar-brand" href="../index.php">FastFood Spartan</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
+        <a id="titulo-pagina" class="navbar-brand" href="../index.php">Inicio</a>
         <ul class="nav navbar-nav pull-right">
           <li>
             <a id="car" href="carrito.php" class="btn"><i class="fas fa-shopping-cart"></i> CARRITO <span id="icon" class="badge badge-success"> <?php print cantidadPlatos(); ?></span></a>
@@ -44,16 +46,13 @@ require 'funciones.php';
     </div>
   </nav>
 
-
-
   <div class="container" id="main">
-    <!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
+<!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
     <div class="row">
       <?php
       require 'vendor/autoload.php';
       $plato = new FastFood\Plato;
-      $info_platos = $plato->mostrar();
-      
+      $info_platos = $plato->mostrar();//order by algo
       $cantidad = count($info_platos);
       if ($cantidad > 0) {
         for ($x = 0; $x < $cantidad; $x++) {
@@ -70,7 +69,6 @@ require 'funciones.php';
               </div>
               <div class="panel-body">
                 <?php
-                
                 $foto = 'upload/' . $item['Imagen'];
 
                 if (file_exists($foto)) {
@@ -113,6 +111,5 @@ require 'funciones.php';
       $('[data-toggle="popover"]').popover()
     });
   </script>
-</body>
-
-</html>
+  
+  <?php include '../layouts/footer.php'; ?>

@@ -2,11 +2,13 @@
 session_start();
 
 if (isset($_SESSION['carrito'])) {  
-    //Si el el producto existe en el carrito
-    echo "Sesion validad";
-    } else {
-        echo "Sesion no valida";
-    }
+	//Si el el producto existe en el carrito
+	echo 'work';
+	} else {
+	  //echo 'do not work';
+	  //die;
+	 header('Location: ../../index.php');
+	}
  ?>
 <!DOCTYPE html>
 <html lang="en">

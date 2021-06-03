@@ -5,9 +5,9 @@ if (isset($_SESSION['carrito'])) {
   //Si el el producto existe en el carrito
   echo 'work';
   } else {
-    echo 'do not work';
-    die;
-   // header('Location: ../../index.php');
+    //echo 'do not work';
+    //die;
+   header('Location: ../../index.php');
   }
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
@@ -228,6 +228,8 @@ if (isset($_SESSION['carrito'])) {
         })
          
     </script>
-
+<?php 
+session_destroy();
+?>
   </body>
 </html>

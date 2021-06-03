@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- HEADER -->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +12,8 @@
   <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../assets/css/estilos.css">
 </head>
-<!-- FIN HEADER -->
+
 <body>
-
-
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -42,13 +40,14 @@
             </ul>
           </li>
         </ul>
+
+
+
+
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
-
-
-  
   <div class="container" id="main">
     <div class="row">
       <div class="col-md-12">
@@ -77,13 +76,13 @@
 
 
               <?php
-              //Requiere autoload , llamando funcion mostrar todos los datos de la clase Plato por fetchall()
+
               require '../../vendor/autoload.php';
               $plato = new FastFood\Plato;
               $info_plato = $plato->mostrar();
 
               //print '<pre>';
-              //print_r($info_plato);
+              //print_r($info_pelicula);
               //die;
 
               $cantidad = count($info_plato);
@@ -100,7 +99,6 @@
                     <td><?php print $item['nombre'] ?></td>
                     <td>S/. <?php print $item['Precio'] ?></td>
                     <td class="text-center">
-                    <!-- Validacion de Imagen -->
                       <?php
                       $foto = '../../upload/' . $item['Imagen'];
 
@@ -110,15 +108,9 @@
                       <?php } else { ?>
                         SIN FOTO
                       <?php } ?>
-
-
                     </td>
                     <td class="text-center">
-                    <!-- Esta recogiendo el IdPlato para eliminarlo en acciones, el print es par mostrar
-                    cual esta siendo referenciado -->
                       <a href="../acciones.php?Id_Plato=<?php print $item['Id_Plato']; ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
-                      <!-- Esta recogiendo el IdPlato para mandarlo al FrmActualizar, el print es par mostrar
-                    cual esta siendo referenciado -->
                       <a href="form_actualizar.php?Id_Plato=<?php print $item['Id_Plato']; ?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
                     </td>
                   </tr>

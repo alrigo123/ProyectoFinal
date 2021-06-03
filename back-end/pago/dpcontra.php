@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-if (isset($_SESSION['carrito'])) {
+if (isset($_SESSION['carrito'])) {  
   //Si el el producto existe en el carrito
   echo 'work';
-} else {
-  //echo 'do not work';
-  //die;
-  // header('Location: ../../index.php');
-}
+  } else {
+    //echo 'do not work';
+    //die;
+   header('Location: ../../index.php');
+  }
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
 <!DOCTYPE html>

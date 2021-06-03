@@ -2,24 +2,22 @@
 
 namespace FastFood;
 
-class Pedido
-{
+class Pedido{
 
     private $config;
     private $cn = null;
 
-    public function __construct()
-    {
+    public function __construct(){
 
-        $this->config = parse_ini_file(__DIR__ . '/../config.ini');
+        $this->config = parse_ini_file(__DIR__.'/../config.ini') ;
 
-        $this->cn = new \PDO($this->config['dns'], $this->config['usuario'], $this->config['clave'], array(
+        $this->cn = new \PDO( $this->config['dns'], $this->config['usuario'],$this->config['clave'],array(
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
         ));
+        
     }
 
-    public function registrar($_params)
-    {
+    public function registrar($_params){
         $sql = "INSERT INTO `pedido`(`Total`, `FechaPedido`, `Id_Cliente`) 
         VALUES (:Total,:FechaPedido,:Id_Cliente)";
 
@@ -29,17 +27,16 @@ class Pedido
             ":Total" => $_params['Total'],
             ":FechaPedido" => $_params['FechaPedido'],
             ":Id_Cliente" => $_params['Id_Cliente']
-
+            
         );
 
-        if ($resultado->execute($_array))
+        if($resultado->execute($_array))
             return $this->cn->lastInsertId();
 
         return false;
     }
 
-    public function registrarDetalle($_params)
-    {
+    public function registrarDetalle($_params){
         $sql = "INSERT INTO `detallepedido`(`IdPlato`, `IdPedido`, `PrecioUnit`, `Cantidad`) 
         VALUES (:IdPlato,:IdPedido,:PrecioUnit,:Cantidad)";
 
@@ -53,7 +50,7 @@ class Pedido
             ":Cantidad" => $_params['Cantidad']
         );
 
-        if ($resultado->execute($_array))
+        if($resultado->execute($_array))
             return  true;
 
         return false;
@@ -66,10 +63,11 @@ class Pedido
 
         $resultado = $this->cn->prepare($sql);
 
-        if ($resultado->execute())
+        if($resultado->execute())
             return  $resultado->fetchAll();
 
         return false;
+
     }
     public function mostrarUltimos()
     {
@@ -78,36 +76,33 @@ class Pedido
 
         $resultado = $this->cn->prepare($sql);
 
-        if ($resultado->execute())
+        if($resultado->execute())
             return  $resultado->fetchAll();
 
         return false;
+
     }
-
-
-
-    //este puede ser
 
     public function mostrarPorId($id)
     {
         $sql = "SELECT p.Id_Pedido, Nombre, Apellido, Correo, Direccion, Total, FechaPedido FROM pedido p 
         INNER JOIN cliente c ON p.Id_Cliente = c.Id_Cliente WHERE p.Id_Pedido = :Id_Pedido";
 
-
+            
         $resultado = $this->cn->prepare($sql);
 
         $_array = array(
-            ':Id_Pedido' => $id
+            ':Id_Pedido'=>$id
         );
 
-        if ($resultado->execute($_array))
+        if($resultado->execute($_array ))
             return  $resultado->fetch();
 
         return false;
     }
 
+    
 
-    //este tambien puede ser
     public function mostrarDetallePorIdPedido($id)
     {
         $sql = "SELECT 
@@ -119,12 +114,16 @@ class Pedido
         $resultado = $this->cn->prepare($sql);
 
         $_array = array(
-            ':Id_Plato' => $id
+            ':Id_Plato'=>$id
         );
 
-        if ($resultado->execute($_array))
+        if($resultado->execute( $_array))
             return  $resultado->fetchAll();
 
         return false;
+
     }
+
+
+
 }

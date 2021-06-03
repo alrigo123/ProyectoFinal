@@ -5,8 +5,9 @@ if (isset($_SESSION['carrito'])) {
     //Si el el producto existe en el carrito
     echo 'work';
     } else {
-      //echo "doesn't work";
+      //echo 'do not work';
       //die;
+     header('Location: ../../index.php');
     }
 
     require '../vendor/autoload.php';

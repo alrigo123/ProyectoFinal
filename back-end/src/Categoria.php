@@ -18,9 +18,8 @@ class Categoria{
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
         )); 
         
-
     }
-    //selecciona todos los datos de categoria, por eso se guarad en fetchAll() , xq no reuqire parametros
+
     public function mostrar(){ 
         $sql="SELECT * FROM categoria";
 
@@ -33,3 +32,6 @@ class Categoria{
       
   }
 }
+
+
+    ?>

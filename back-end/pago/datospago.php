@@ -33,6 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         header('Location: dp.php');
     }else{
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
     }
 }
