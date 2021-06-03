@@ -5,14 +5,13 @@ if (isset($_SESSION['carrito'])) {
     //Si el el producto existe en el carrito
     echo 'work';
     } else {
-      echo "doesn't work";
-      die;
+      //echo "doesn't work";
+      //die;
     }
 
     require '../vendor/autoload.php';
     $pago = new FastFood\Pago;
     $info_correo = $pago->mostrarCorreo();
-    print $va
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,12 +79,16 @@ if (isset($_SESSION['carrito'])) {
      }
 ?>
         <h1 class="display-4">Seleccionar <strong class="b_bold">METODO DE PAGO</strong></h1>
+        <form action="#" method="post">
         <div id="botones" class="col-md-3 align-items-center">
-            <a class="btn btn-info btn-lg btn-block" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Pago con tarjeta VISA</a>
+            <a class="btn btn-info btn-lg btn-block" type="submit" name="accion" value="Tarjeta" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Pago con tarjeta VISA</a>
         </div>
+        </form>
+        <form action="#" method="post">
         <div id="botones" class="col-md-3 align-items-center">
-            <a class="btn btn-info btn-lg btn-block" href="dp.php" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega</a>
+            <a class="btn btn-info btn-lg btn-block" type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega</a>
         </div>
+        </form>
     </div>
 
     </div> <!-- /container -->

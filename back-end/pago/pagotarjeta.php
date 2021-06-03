@@ -163,7 +163,7 @@ if (isset($_SESSION['carrito'])) {
 					<input type="text" id="inputCCV" maxlength="3" >
 				</div>
 			</div>
-			<a href="dp.php">
+			<a href="dptarjeta.php">
 				<input type="" class="btn-enviar" onclick="validarCorreo(form.inputCorreo.value)" name="Pagar" value="Pagar">
 			</a>
 

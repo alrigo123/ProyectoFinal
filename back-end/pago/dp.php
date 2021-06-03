@@ -61,6 +61,8 @@ if (isset($_SESSION['carrito'])) {
                      $info_detalle_pedido = $pago->mostrarDetallePedido();
 
                      $info_correo = $pago->mostrarCorreo();
+
+                     $info_pago = $pago->mostrarPago();
       
                       $cantidad = count($info_correo);
                       if ($cantidad > 0) {
@@ -104,14 +106,19 @@ if (isset($_SESSION['carrito'])) {
 
                 <?php }} ?>
 
-
+                <?php 
+ $cantidad = count($info_pago);
+ if ($cantidad > 0) {
+   for ($x = 0; $x < $cantidad; $x++) {
+     $item = $info_pago[$x];
+?>
 
                 <div class="form-group">
                     <label>Tipo de Pago</label>
-                    <input value="Tarjeta o contra enetrega" type="text" class="form-control" readonly>
+                    <input value="<?php print $item['TipoPago']; ?>" type="text" class="form-control" readonly>
                 </div>
                
-
+                <?php }} ?>
 
                 <hr>
                     Descripcion de Productos Comprados

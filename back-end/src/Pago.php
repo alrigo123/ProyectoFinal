@@ -19,25 +19,31 @@ class Pago
     }
 
 
-    public function registrar($_params)
+    //---------------------------------------------
+
+    public function registrarPago($_params)
     {
-        $sql = "INSERT INTO `pago`(`IdDetPedido`,`Total`, `FechaPago`, `TipoPago`) 
-        VALUES (:IdDetPedido,:Total,:FechaPago,:TipoPago)";
+        $sql = "INSERT INTO `pago`(`IdPedido`,`Total`, `FechaPago`, `TipoPago`) 
+        VALUES (:IdPedido,:Total,:FechaPago,:TipoPago)";
 
         $resultado = $this->cn->prepare($sql);
 
         $_array = array(
-            ":IdDetPedido" => $_params['IdDetPedido'],
+            ":IdPedido" => $_params['IdPedido'],
             ":Total" => $_params['Total'],
-            ":FechaPedido" => $_params['FechaPedido'],
-            ":Id_Cliente" => $_params['Id_Cliente']
+            ":FechaPago" => $_params['FechaPago'],
+            ":TipoPago" => $_params['TipoPago']
         );
 
         if ($resultado->execute($_array))
-            return $this->cn->lastInsertId();
+            return  true;
 
         return false;
     }
+
+    
+    //---------------------------------------------
+
 
     public function registrarDetallePago($_params)
     {
@@ -60,34 +66,42 @@ class Pago
     }
 
 
-    //este puede ser con id de cliente
 
-    public function mostrarPago($_params)
+
+    
+    //---------------------------------------------
+
+
+
+
+    //este puede ser con id de cliente
+//vamos a mostrar solo el tipo de pago
+    public function mostrarPago()
     {
-        $sql = "SELECT Id_pago, IdDetPedido, Total, FechaPago, TipoPago FROM pago where Id_pago = 4";
+        $sql = "SELECT t.Id_Pago,t.IdPedido,t.Total,t.FechaPago,t.TipoPago FROM pago t WHERE t.Id_Pago = ( SELECT MAX( Id_Pago ) FROM pago)";
 
 
         $resultado = $this->cn->prepare($sql);
 
-        $_array = array(
-            ":Id_pago" => $_params['Id_pago'],
-            ":IdDetPedido" => $_params['IdDetPedido'],
-            ":Total" => $_params['Total'],
-            ":FechaPago" => $_params['FechaPago'],
-            ":TipoPago" => $_params['TipoPago']
-        );
-
-        if ($resultado->execute($_array))
-            return  $resultado->fetch();
+        if ($resultado->execute())
+            return  $resultado->fetchAll();
 
         return false;
     }
 
 
+
+
+
+
+
+
+
+    
     //este tambien puede ser
     public function mostrarDetallePedido()
     {
-        $sql = "SELECT p.NombrePlato,p.Imagen,p.Precio,dp.Cantidad,pedido.Total,
+        $sql = "SELECT dp.IdDetPedido, p.NombrePlato,p.Imagen,p.Precio,dp.Cantidad,pedido.Total,
         (dp.PrecioUnit*dp.Cantidad) AS TotalP
         FROM plato p
         INNER JOIN detallepedido dp
