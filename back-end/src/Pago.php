@@ -47,8 +47,8 @@ class Pago
 
     public function registrarDetallePago($_params)
     {
-        $sql = "INSERT INTO `detallepago`(`FechaDetalle`, `TotalDetalle`, `Id_pago`) 
-        VALUES (:FechaDetalle,:TotalDetalle,:Id_pago)";
+        $sql = "INSERT INTO `detallepago`(`FechaDetalle`, `TotalDetalle`, `Id_Pago`) 
+        VALUES (:FechaDetalle,:TotalDetalle,:Id_Pago)";
 
 
         $resultado = $this->cn->prepare($sql);
@@ -56,7 +56,7 @@ class Pago
         $_array = array(
             ":FechaDetalle" => $_params['FechaDetalle'],
             ":TotalDetalle" => $_params['TotalDetalle'],
-            ":Id_pago" => $_params['Id_pago']
+            ":Id_Pago" => $_params['Id_Pago']
         );
 
         if ($resultado->execute($_array))

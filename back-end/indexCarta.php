@@ -111,5 +111,7 @@ require 'funciones.php';
       $('[data-toggle="popover"]').popover()
     });
   </script>
-  
-  <?php include '../layouts/footer.php'; ?>
+
+</body>
+
+</html>

@@ -23,16 +23,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //Aqui poner las funciones d eresgistro apgo y registro detalee d apgo
 
+        date_default_timezone_set("America/Lima");
+          $_params = array(
+                'FechaDetalle' => date('Y-m-d H:i:s'),
+                'TotalDetalle' => $_POST['Total'],
+                'Id_Pago' => $_POST['Id_Pago']
+            );
+    
+        $pagoid = $pago->registrarDetallePago($_params);
+  
 
 
         $_SESSION['carrito'] = array();
 
 
-
+//agregar envio a correo de geral
 
 
         header('Location: dp.php');
     }else{
-        header('Location: ../../index.php');
+        //header('Location: ../../index.php');
+        echo 'ERROR';
     }
 }

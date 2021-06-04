@@ -8,6 +8,6 @@
     } else {
       //echo 'do not work';
       //die;
-     header('Location: ../../index.php');
+     header('Location: gracias.php');//cambiar a gracias
     }
 ?>

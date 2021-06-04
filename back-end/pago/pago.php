@@ -5,9 +5,9 @@ if (isset($_SESSION['carrito'])) {
     //Si el el producto existe en el carrito
     echo 'work';
     } else {
-      //echo 'do not work';
+      echo 'do not work';
       //die;
-     header('Location: ../../index.php');
+     //header('Location: ../../index.php');
     }
 
     require '../vendor/autoload.php';
@@ -87,7 +87,7 @@ if (isset($_SESSION['carrito'])) {
         </form>
         <form action="#" method="post">
         <div id="botones" class="col-md-3 align-items-center">
-            <a class="btn btn-info btn-lg btn-block" type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega</a>
+            <a class="btn btn-info btn-lg btn-block" type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega (+ S/. 2) </a>
         </div>
         </form>
     </div>

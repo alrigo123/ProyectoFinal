@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
     
         $cliente_id = $cliente->registrar($_params);
     
+        
         $pedido = new FastFood\Pedido;
     
         $_params = array(

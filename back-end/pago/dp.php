@@ -5,9 +5,9 @@ if (isset($_SESSION['carrito'])) {
   //Si el el producto existe en el carrito
   echo 'work';
   } else {
-    //echo 'do not work';
+    echo 'do not work';
     //die;
-   header('Location: ../../index.php');
+  // header('Location: ../../index.php');
   }
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
@@ -50,6 +50,7 @@ if (isset($_SESSION['carrito'])) {
     <div class="container" id="main">
     <div class="row">
           <div class="col-md-12">
+          <legend>Detalle de Pago</legend>
             <fieldset>
                 <?php
                      require '../vendor/autoload.php';
@@ -64,18 +65,37 @@ if (isset($_SESSION['carrito'])) {
 
                      $info_pago = $pago->mostrarPago();
       
+?>
+
+<?php 
+ $cantidad = count($info_pedido);
+ if ($cantidad > 0) {
+   for ($x = 0; $x < $cantidad; $x++) {
+     $item = $info_pedido[$x];
+?>
+
+                <div class="form-group">
+                    <label>Nro. Pedido</label>
+                    <input value="<?php print $item['Id_Pedido'] ?>" type="text" class="form-control" readonly>
+                </div>
+
+                <?php }} ?>
+
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <input value="Su compra fue realizada exitosamente!! " type="text" class="form-control" readonly>
+                </div>
+
+  <?php                   
                       $cantidad = count($info_correo);
                       if ($cantidad > 0) {
                         for ($x = 0; $x < $cantidad; $x++) {
                           $item = $info_correo[$x];
                       
     ?>
-
-
-
-                <legend>Información de su Compra</legend>
+               
                 <div class="form-group">
-                    <label>Nombre</label>
+                    <label>Nombre Cliente</label>
                     <input value="<?php print $item['Nombre'] ?>" type="text" class="form-control" readonly>
                 </div>
                 <div class="form-group">
@@ -117,6 +137,7 @@ if (isset($_SESSION['carrito'])) {
                     <label>Tipo de Pago</label>
                     <input value="<?php print $item['TipoPago']; ?>" type="text" class="form-control" readonly>
                 </div>
+                    <input value="<?php print $item['Id_Pago']; ?>" type="hidden" name="Id_Pago" class="form-control" readonly>
                
                 <?php }} ?>
 

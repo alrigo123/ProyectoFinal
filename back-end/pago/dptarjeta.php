@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-if (isset($_SESSION['carrito'])) {  
+if (isset($_SESSION['carrito'])) {
   //Si el el producto existe en el carrito
   echo 'work';
-  } else {
-    //echo 'do not work';
-    //die;
-   header('Location: ../../index.php');
-  }
+} else {
+  echo 'do not work';
+  //die;
+  // header('Location: ../../index.php');
+}
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
 <!DOCTYPE html>
@@ -102,7 +102,7 @@ if (isset($_SESSION['carrito'])) {
             ?>
 
                 <div class="form-group">
-                <input type="hidden" value="<?php echo $item['Id_Pedido']?>" name="Id_Pedido">
+                  <input type="hidden" value="<?php echo $item['Id_Pedido'] ?>" name="Id_Pedido">
                   <label>Fecha Detalle de Pago</label>
                   <input value="<?php print $item['FechaPedido'] ?>" type="text" class="form-control" readonly>
                 </div>
@@ -200,7 +200,9 @@ if (isset($_SESSION['carrito'])) {
 
 
           </fieldset>
-          <button type="submit" class="btn btn-warning btn-block">Confirmar</button>
+          <div id="pay">
+            <button id="btnpay" type="submit" class="btn btn-warning btn-lg">Confirmar</button>
+          </div>
 
     </form>
 
