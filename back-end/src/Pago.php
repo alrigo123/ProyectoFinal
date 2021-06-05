@@ -91,6 +91,21 @@ class Pago
 
 
 
+    public function mostrarDetallePago()
+    {
+        $sql = "SELECT t.Id_Detalle, t.FechaDetalle, t.TotalDetalle,t.Id_Pago FROM detallepago t WHERE t.Id_Detalle = ( SELECT MAX( Id_Detalle ) FROM detallepago)";
+
+
+        $resultado = $this->cn->prepare($sql);
+
+        if ($resultado->execute())
+            return  $resultado->fetchAll();
+
+        return false;
+    }
+
+
+//mostrar detalle pago
 
 
 

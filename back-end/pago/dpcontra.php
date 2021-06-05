@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-if (isset($_SESSION['carrito'])) {  
+if (isset($_SESSION['carrito'])) {
   //Si el el producto existe en el carrito
   echo 'work';
-  } else {
-    echo 'do not work';
-    //die;
-   //header('Location: ../../index.php');
-  }
+} else {
+  echo 'do not work';
+  //die;
+  //header('Location: ../../index.php');
+}
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
 <!DOCTYPE html>
@@ -78,34 +78,27 @@ if (isset($_SESSION['carrito'])) {
 
                 <legend>Información de Pago</legend>
                 <div class="form-group">
-                  <label>Nombre</label>
+                  <label>Nombre Cliente</label>
                   <input value="<?php print $item['Nombre'] ?>" type="text" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                   <label>Correo Electronico</label>
                   <input value="<?php print $item['Correo'] ?>" type="text" class="form-control" readonly>
                 </div>
-                <div class="form-group">
-                  <label>Direccion</label>
-                  <input value="<?php print $item['Direccion'] ?>" type="textarea" class="form-control" readonly>
-                </div>
-                <div class="form-group">
-                  <label>Numero de celular</label>
-                  <input value="<?php print $item['Celular'] ?>" type="text" class="form-control" readonly>
-                </div>
             <?php }
             } ?>
 
 
-<?php 
- $cantidad = count($info_pago);
- if ($cantidad > 0) {
-   for ($x = 0; $x < $cantidad; $x++) {
-     $item = $info_pago[$x];
-?>
-                    <input value="<?php print $item['Id_Pago']; ?>" type="hidden" name="Id_Pago" class="form-control" readonly>
-               
-                <?php }} ?>
+            <?php
+            $cantidad = count($info_pago);
+            if ($cantidad > 0) {
+              for ($x = 0; $x < $cantidad; $x++) {
+                $item = $info_pago[$x];
+            ?>
+                <input value="<?php print $item['Id_Pago']; ?>" type="hidden" name="Id_Pago" class="form-control" readonly>
+
+            <?php }
+            } ?>
 
 
             <?php
@@ -117,7 +110,7 @@ if (isset($_SESSION['carrito'])) {
             ?>
 
                 <div class="form-group">
-                <input type="hidden" value="<?php echo $item['Id_Pedido']?>" name="Id_Pedido">
+                  <input type="hidden" value="<?php echo $item['Id_Pedido'] ?>" name="Id_Pedido">
                   <label>Fecha de Pago</label>
                   <input value="<?php print $item['FechaPedido'] ?>" type="text" class="form-control" readonly>
                 </div>
@@ -135,7 +128,7 @@ if (isset($_SESSION['carrito'])) {
 
 
             <hr>
-            Descripcion de Productos Comprados
+            Descripcion de Platos Comprados
             <hr>
             <table class="table table-bordered">
               <thead>
@@ -182,9 +175,9 @@ if (isset($_SESSION['carrito'])) {
                         <?php } ?>
                       </td>
                       <td>S/. <?php print $item['Precio'] ?> </td>
-                      <td ><?php print $item['Cantidad'] ?></td>
+                      <td><?php print $item['Cantidad'] ?></td>
                       <td>S/.
-                        <?php 
+                        <?php
                         print $item['TotalP'] ?>
                       </td>
                     </tr>
@@ -207,10 +200,10 @@ if (isset($_SESSION['carrito'])) {
             <div class="col-md-3">
               <div class="form-group">
                 <!-- este total el final -->
-                <label>Total Compra</label>
-                <input value="S/.  <?php 
-                $valor = $item['Total']+2;
-                print $valor; ?>" type="text" name="" class="form-control" readonly>
+                <label>Total Compra (Incluido + S/. 2)</label>
+                <input value="S/.  <?php
+                                    $valor = $item['Total'] + 2;
+                                    print $valor; ?>" type="text" name="" class="form-control" readonly>
 
                 <input type="hidden" name="Total" value="<?php print $valor; ?>">
               </div>
@@ -219,7 +212,7 @@ if (isset($_SESSION['carrito'])) {
 
           </fieldset>
           <div id="pay">
-          <button id="btnpay" type="submit" class="btn btn-warning btn-lg">Confirmar</button>
+            <button id="btnpay" type="submit" class="btn btn-warning btn-lg">Confirmar</button>
           </div>
 
     </form>

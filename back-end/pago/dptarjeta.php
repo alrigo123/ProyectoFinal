@@ -7,7 +7,7 @@ if (isset($_SESSION['carrito'])) {
 } else {
   echo 'do not work';
   //die;
-  // header('Location: ../../index.php');
+  //header('Location: ../../index.php');
 }
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
@@ -64,6 +64,9 @@ if (isset($_SESSION['carrito'])) {
 
             $info_correo = $pago->mostrarCorreo();
 
+            $info_pago = $pago->mostrarPago();
+
+
             $cantidad = count($info_correo);
             if ($cantidad > 0) {
               for ($x = 0; $x < $cantidad; $x++) {
@@ -73,25 +76,30 @@ if (isset($_SESSION['carrito'])) {
 
 
 
-                <legend>Información de su Compra</legend>
+                <legend>Información de Pago</legend>
                 <div class="form-group">
-                  <label>Nombre</label>
+                  <label>Nombre Cliente</label>
                   <input value="<?php print $item['Nombre'] ?>" type="text" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                   <label>Correo Electronico</label>
                   <input value="<?php print $item['Correo'] ?>" type="text" class="form-control" readonly>
                 </div>
-                <div class="form-group">
-                  <label>Direccion</label>
-                  <input value="<?php print $item['Direccion'] ?>" type="textarea" class="form-control" readonly>
-                </div>
-                <div class="form-group">
-                  <label>Numero de celular</label>
-                  <input value="<?php print $item['Celular'] ?>" type="text" class="form-control" readonly>
-                </div>
             <?php }
             } ?>
+
+
+            <?php
+            $cantidad = count($info_pago);
+            if ($cantidad > 0) {
+              for ($x = 0; $x < $cantidad; $x++) {
+                $item = $info_pago[$x];
+            ?>
+                <input value="<?php print $item['Id_Pago']; ?>" type="hidden" name="Id_Pago" class="form-control" readonly>
+
+            <?php }
+            } ?>
+
 
             <?php
             $cantidad = count($info_pedido);
@@ -103,7 +111,7 @@ if (isset($_SESSION['carrito'])) {
 
                 <div class="form-group">
                   <input type="hidden" value="<?php echo $item['Id_Pedido'] ?>" name="Id_Pedido">
-                  <label>Fecha Detalle de Pago</label>
+                  <label>Fecha de Pago</label>
                   <input value="<?php print $item['FechaPedido'] ?>" type="text" class="form-control" readonly>
                 </div>
 
@@ -120,7 +128,7 @@ if (isset($_SESSION['carrito'])) {
 
 
             <hr>
-            Descripcion de Productos Comprados
+            Descripcion de Platos Comprados
             <hr>
             <table class="table table-bordered">
               <thead>
@@ -169,7 +177,8 @@ if (isset($_SESSION['carrito'])) {
                       <td>S/. <?php print $item['Precio'] ?> </td>
                       <td><?php print $item['Cantidad'] ?></td>
                       <td>S/.
-                        <?php print $item['TotalP'] ?>
+                        <?php
+                        print $item['TotalP'] ?>
                       </td>
                     </tr>
 
@@ -192,9 +201,11 @@ if (isset($_SESSION['carrito'])) {
               <div class="form-group">
                 <!-- este total el final -->
                 <label>Total Compra</label>
-                <input value="S/.  <?php print $item['Total']; ?>" type="text" name="" class="form-control" readonly>
+                <input value="S/.  <?php
+                                    $valor = $item['Total'];
+                                    print $valor; ?>" type="text" name="" class="form-control" readonly>
 
-                <input type="hidden" name="Total" value="<?php print $item['Total']; ?>">
+                <input type="hidden" name="Total" value="<?php print $valor; ?>">
               </div>
             </div>
 
