@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_SESSION['carrito'])) {
 
         $pago = new FastFood\Pago;
-
+        date_default_timezone_set("America/Lima");
         $_params = array(
             'IdPedido' => $_POST['Id_Pedido'],
             'Total' => $_POST['Total'],
-            'FechaPago' => date('Y-m-d\TH:i:sP'),
+            'FechaPago' => date('Y-m-d H:i:s'),
             'TipoPago' => $_POST['TipoPago']
 
         );

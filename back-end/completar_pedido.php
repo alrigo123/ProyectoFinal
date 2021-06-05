@@ -23,10 +23,10 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
     
         
         $pedido = new FastFood\Pedido;
-    
+        date_default_timezone_set("America/Lima");
         $_params = array(
             'Total' => calcularTotal(),
-            'FechaPedido' => date('Y-m-d'),
+            'FechaPedido' => date('Y-m-d H:i:s'),
             'Id_Cliente'=>$cliente_id
         );
         

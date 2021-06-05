@@ -194,6 +194,9 @@ if (isset($_SESSION['carrito'])) {
                     </td>
                     <td>S/. <?php print $item['Precio'] ?> </td>
                     <td><?php print $item['Cantidad'] ?></td>
+
+
+
                     <td>S/.
                       <?php print $item['TotalP'] ?>
                     </td>
@@ -214,13 +217,25 @@ if (isset($_SESSION['carrito'])) {
 
 
           </table>
-          <div class="col-md-3">
-            <div class="form-group">
-              <!-- este total el final -->
-              <label>Total Compra</label>
-              <input value="S/.  <?php print $item['Total'] ?>" type="text" class="form-control" readonly>
-            </div>
-          </div>
+
+
+          <?php
+          $cantidad = count($info_detalle_pago);
+          if ($cantidad > 0) {
+            for ($x = 0; $x < $cantidad; $x++) {
+              $item = $info_detalle_pago[$x];
+          ?>
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Total Compra</label>
+                  <input value="S/. <?php print $item['TotalDetalle'] ?>" type="text" class="form-control" readonly>
+                </div>
+                </div>
+
+            <?php }
+          } ?>
+
 
 
         </fieldset>
