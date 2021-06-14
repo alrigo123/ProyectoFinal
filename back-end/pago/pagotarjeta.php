@@ -7,7 +7,7 @@ if (isset($_SESSION['carrito'])) {
 	} else {
 	  echo 'do not work';
 	  //die;
-	 //header('Location: ../../index.php');
+	  header('Location: ../../error.php');
 	}
  ?>
 <!DOCTYPE html>

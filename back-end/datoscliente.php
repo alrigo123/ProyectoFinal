@@ -6,8 +6,8 @@ if (isset($_SESSION['carrito'])) {
   echo 'work';
 } else {
   echo 'do no work';
- // die;
-  header('Location: ../error.php');
+  die;
+  //header('Location: ../error.php');
 }
 
 ?>

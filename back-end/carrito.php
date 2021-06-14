@@ -16,7 +16,6 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 
 
 
-
     if (isset($_SESSION['carrito'])) { //Si la sesion del carrito existe
         //Si el el producto existe en el carrito
         if (array_key_exists($id, $_SESSION['carrito'])) {
