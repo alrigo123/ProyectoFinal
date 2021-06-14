@@ -1,24 +1,25 @@
-<?php 
+<?php
 session_start();
 
-if (isset($_SESSION['carrito'])) {  
-    //Si el el producto existe en el carrito
-    echo 'work';
-    } else {
-      echo 'do not work';
-      //die;
-     //header('Location: ../../index.php');
-    }
 
-    require '../vendor/autoload.php';
-    $pago = new FastFood\Pago;
-    $info_correo = $pago->mostrarCorreo();
- ?>
+if (isset($_SESSION['carrito'])) {
+    echo 'work';
+} else {
+    echo 'do no work';
+    // die;0
+    // header('Location: ../../error.php');
+}
+
+
+require '../vendor/autoload.php';
+$pago = new FastFood\Pago;
+$info_correo = $pago->mostrarCorreo();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,51 +46,89 @@ if (isset($_SESSION['carrito'])) {
 
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <a id="titulo-pagina" class="navbar-brand" href="#">"No puedes comprar la felicidad ,pero puedes comprar comida y esto es muy rapido"</a>
-            </div>
-            <!--/.nav-collapse -->
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a id="titulo-pagina" class="navbar-brand" href="#" style="left: -700px;">"No puedes comprar la felicidad ,pero puedes comprar comida y esto es muy rapido"</a>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
     </nav>
-<br>
-<!-- BODY TEXT -->
+    <br>
+    <!-- BODY TEXT -->
     <div class="jumbotron">
-    <?php 
-    
-      
-     $cantidad = count($info_correo);
-     if ($cantidad > 0) {
-       for ($x = 0; $x < $cantidad; $x++) {
-         $item = $info_correo[$x];
-    }
-    ?>
-        <h3 class="display-4">Correo de envio: <input type="text" value="<?php print $item['Correo'] ?>" disabled></h3>
-<?php 
-     }else{
-         echo 'Error';
-     }
-?>
-        <h1 class="display-4">Seleccionar <strong class="b_bold">METODO DE PAGO</strong></h1>
-        <form action="#" method="post">
-        <div id="botones" class="col-md-3 align-items-center">
-            <a class="btn btn-info btn-lg btn-block" type="submit" name="accion" value="Tarjeta" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Pago con tarjeta VISA</a>
+        <?php
+
+
+        $cantidad = count($info_correo);
+        if ($cantidad > 0) {
+            for ($x = 0; $x < $cantidad; $x++) {
+                $item = $info_correo[$x];
+            }
+        ?>
+            <h3 id="correo" class="display-4">Su correo: <br><input id="incorreo" type="text" value="<?php print $item['Correo'] ?>" disabled></h3>
+        <?php
+        } else {
+            echo 'Error';
+        }
+        ?>
+        <h1 id="metodo" class="display-12">Seleccionar <strong class="b_bold">METODO DE PAGO</strong></h1>
+        <!-- <div class="row justify-content-center">
+            <a id="btn1" class="btn btn-info btn-lg" type="submit" name="accion" value="Tarjeta" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Tarjeta VISA</a>
+
+            <a id="btn2" class="btn btn-info btn-lg " type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button"><i class="far fa-money-bill-alt"></i> Contra entrega<strong> (+ S/. 2) </strong></a>
+
+        </div> -->
+        <div class="container" style="margin-top:40px;">
+            <div id="row" class="row">
+                <div class="col-lg-6 mb-4" style="margin-bottom:40px; border-bottom:1px solid black;">
+                    <!-- VISA -->
+                    <div class="card">
+                        <img style="border-radius: 15px;" class="card-img-top" src="../upload/visa.jpg" alt="">
+
+                        <div class="card-body">
+                            <h3 class="card-title"><strong>Tarjeta Visa</strong></h3>
+                            <p class="card-text">
+                                Some quick example text to build on
+                                the card title and make up the bulk
+                                of the card's content.
+                            </p>
+                            <a id="btn1" class="btn btn-info" type="submit" name="accion" value="Tarjeta" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Tarjeta VISA</a>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4" style="border-bottom:1px solid black; ">
+                    <div class="card">
+                        <img style="border-radius: 15px;" class="card-img-top" src="../upload/contra.jpg" alt="">
+
+                        <div class="card-body">
+                        <h3 class="card-title"><strong>Contra Entrega</strong></h3>
+                            <p class="card-text">
+                                Some quick example text to build on the
+                                card title and make up the bulk of the
+                                card's content.
+                            </p>
+                            <a id="btn2" class="btn btn-info" type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button" style="width:40%;"><i class="far fa-money-bill-alt"></i> Contra entrega<strong> (+ S/. 2) </strong></a>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </form>
-        <form action="#" method="post">
-        <div id="botones" class="col-md-3 align-items-center">
-            <a class="btn btn-info btn-lg btn-block" type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button"><i class="far fa-money-bill-alt"></i> Pago contra entrega <br>(+ S/. 2) </a>
-        </div>
-        </form>
+
+
     </div>
 
     </div> <!-- /container -->

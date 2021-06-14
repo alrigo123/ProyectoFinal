@@ -2,6 +2,14 @@
 session_start();
 require 'funciones.php';
 
+if (isset($_SESSION['carrito'])) {
+  echo 'work';
+} else {
+  echo 'do no work';
+ // die;
+  header('Location: ../error.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,10 +88,10 @@ require 'funciones.php';
                                 </div>
                                 <div class="form-group">
                                 <label id="iconos"> <i class="fa fa-address-card-o"> </i> Dirección</label>
-                                    <textarea name="Direccion" class="form-control"  rows="4" required></textarea>
+                                    <textarea name="Direccion" class="form-control"  rows="4" required placeholder="Ingrese alguna referencia junto a la direccion de su domicilio... "></textarea>
                                 </div>
 
-                                <button id="icono-b" type="submit" class="btn btn-primary btn-block"><i id="icono-b" class="fas fa-check-circle"></i> Confirmar</button>
+                                <button id="icono-b" type="submit" class="btn btn-primary btn-block btnConfirm"><i id="icono-b" class="fas fa-check-circle"></i> Confirmar</button>
                                 <button id="icono-b" type="reset" class="btn btn-primary btn-block"><i class="fa fa-trash"></i> LIMPIAR</button>
                             </form>
                     </fieldset>
@@ -95,6 +103,20 @@ require 'funciones.php';
 
     </div> <!-- /container -->
 
+  <script>
+    const btnConfirm = document.querySelectorAll('.btnConfirm')
+
+if (btnConfirm){
+    const btnArray = Array.from(btnConfirm);
+    btnArray.forEach((btn) =>{
+        btn.addEventListener('click', (e) =>{
+            if (!confirm('¿Sus datos son los correctos?')){
+                e.preventDefault();
+            }
+        });
+    });
+}
+  </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

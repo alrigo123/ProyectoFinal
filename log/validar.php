@@ -1,8 +1,9 @@
 <?php
+session_name("validar");
+session_start();
 include('db.php');
 $usuario = $_POST['Username'];
 $contraseña = $_POST['Contraseña'];
-session_start();
 $_SESSION['Username'] = $usuario;
 
 

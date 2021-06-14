@@ -7,7 +7,7 @@ if (isset($_SESSION['carrito'])) {
 } else {
   //echo 'do not work';
   //die;
-   header('Location: ../../error.php');
+   //header('Location: ../../error.php');
 }
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>
@@ -99,8 +99,8 @@ if (isset($_SESSION['carrito'])) {
           ?>
 
               <div class="form-group">
-                <label>Nombre Cliente</label>
-                <input value="<?php print $item['Nombre'] ?>" type="text" class="form-control" readonly>
+                <label>Datos Cliente</label>
+                <input value="<?php print $item['Nombre']; echo " "; print $item['Apellido']  ?>" type="text" class="form-control" readonly>
               </div>
               <div class="form-group">
                 <label>Correo Electronico</label>

@@ -44,3 +44,70 @@
     text-align: center;
 
 }
+
+#correo{
+    background-color:none;
+    margin: auto;
+    margin-top:20px;
+    text-align:center;
+    align-items: center; 
+    font-size:24px;
+    font-weight:normal;
+    color: #000000;
+}
+#incorreo{
+    background-color:transparent;
+    margin: auto;
+    margin-left:15px;
+    text-align:center;
+    align-items: center;
+    width:100%;
+    font-size:22px;
+    font-weight: bold;
+    border: 3px none red;
+
+}
+#metodo{
+    background-color:none;
+    margin: auto;
+    margin-top:15px;
+    text-align:center;
+    align-items: center; 
+    font-size:40px;
+    color: #000000;
+}
+.b_bold{
+    background-color:none;
+    margin: auto;
+    text-align:center;
+    align-items: center; 
+    font-size:36px;
+    color: #ff0000;
+}
+
+#row{
+background-color:none;
+text-align:center;
+align-items: center;
+margin: auto;
+margin-top:15px;
+margin-right: 15px;
+}
+#btn1{
+    border:1px solid red;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: blue;
+}
+#btn2{
+    border:1px solid red;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: blue;
+    width:50%;
+}
+#card{
+    border:1px solid red;
+}

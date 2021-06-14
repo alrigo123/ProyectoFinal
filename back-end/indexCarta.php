@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require 'funciones.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +74,9 @@ require 'funciones.php';
 
                 if (file_exists($foto)) {
                 ?>
-                  <img style="width:325px; height:200px;" src="<?php print $foto; ?>" class="img-resposive" data-toggle="popover" data-trigger="hover" data-content="<?php echo $item['Descripcion']; ?>">
+                  <a href="carrito.php?Id_Plato=<?php print $item['Id_Plato']; ?>">
+                  <img style="width:325px; height:200px;" src="<?php print $foto; ?>" class="img-resposive" data-toggle="popover" data-trigger="hover" data-content="<?php echo $item['Descripcion']; ?>" href="">
+                  </a>
                 <?php } else { ?>
                   <img src="assets/imagenes/not-found.jpg" class="img-resposive">
                 <?php } ?>

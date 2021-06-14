@@ -27,6 +27,7 @@ if (isset($_SESSION['carrito'])) {
     <link rel="stylesheet" href="design/css/diseño.css">
   </head>
 <body>
+  si selecciona envair por correo poner el correo
     <h1>Gracias por comprar en fsat food spartan</h1>
     <a class="btn btn-success" href="../../index.php" role="button">REGRESAR</a>
 </body>

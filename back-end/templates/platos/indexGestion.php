@@ -1,3 +1,17 @@
+<?php
+session_name("validar");
+session_start();
+
+if (isset($_SESSION['Username'])) {
+  echo "Work";
+  // die;
+} else {
+  echo "Do not wokr";
+  echo "No puede entrrar sin logearse primero";
+  die;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,6 +74,7 @@
     <div class="row">
       <div class="col-md-12">
         <fieldset>
+       <legend>Bienvenido a gestion de platos <?php print $_SESSION['Username'] ?></legend>
           <legend>Listado de Platos</legend>
           <table class="table table-bordered">
             <thead>
@@ -141,6 +156,7 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="../../assets/js/jquery.min.js"></script>
   <script src="../../assets/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

@@ -1,9 +1,5 @@
 <?php
-  session_start();
-
-  session_unset();
-
+session_name("validar");
   session_destroy();
-
   header('Location: ../../index.php');
 ?>
