@@ -94,20 +94,35 @@ margin-top:15px;
 margin-right: 15px;
 }
 #btn1{
-    border:1px solid red;
+    border:1px solid rgb(9, 9, 109);
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: blue;
+    background-color: rgb(9, 9, 109);
 }
 #btn2{
-    border:1px solid red;
+    border:1px solid rgb(9, 9, 109);
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: blue;
+    background-color: rgb(9, 9, 109);
     width:50%;
 }
 #card{
     border:1px solid red;
+}
+#imagen{
+    text-align: center;
+    align-items: center;
+    border:1px none red;
+    margin: auto;
+}
+#imagen img{
+    border :1px solid black;
+    border-radius :30px;
+}
+#cara{
+    border :1px dashed black;
+    margin-top: 10px;
+    color: #000000;
 }

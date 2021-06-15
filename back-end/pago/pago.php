@@ -3,9 +3,9 @@ session_start();
 
 
 if (isset($_SESSION['carrito'])) {
-    echo 'work';
+    //echo 'work';
 } else {
-    echo 'do no work';
+    //echo 'do no work';
     // die;
      header('Location: ../../error.php');
 }
@@ -100,9 +100,8 @@ $info_correo = $pago->mostrarCorreo();
                         <div class="card-body">
                             <h3 class="card-title"><strong>Tarjeta Visa</strong></h3>
                             <p class="card-text">
-                                Some quick example text to build on
-                                the card title and make up the bulk
-                                of the card's content.
+                                Al pagar con tarjeta, aseguramos el pago 
+                                correcto, rápido y evitamos el contacto.
                             </p>
                             <a id="btn1" class="btn btn-info" type="submit" name="accion" value="Tarjeta" href="pagotarjeta.php" role="button"><i class="fab fa-cc-visa"></i> Tarjeta VISA</a>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -116,9 +115,8 @@ $info_correo = $pago->mostrarCorreo();
                         <div class="card-body">
                         <h3 class="card-title"><strong>Contra Entrega</strong></h3>
                             <p class="card-text">
-                                Some quick example text to build on the
-                                card title and make up the bulk of the
-                                card's content.
+                                El pago contra entrega, se realizará
+                                una vez que usted obtenga su pedido.
                             </p>
                             <a id="btn2" class="btn btn-info" type="submit" name="accion" value="Efectivo" href="dpcontra.php" role="button" style="width:40%;"><i class="far fa-money-bill-alt"></i> Contra entrega<strong> (+ S/. 2) </strong></a>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->

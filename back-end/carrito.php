@@ -52,6 +52,7 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <script src="https://kit.fontawesome.com/74c4c07f2a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -193,6 +194,26 @@ if (isset($_GET['Id_Plato']) && is_numeric($_GET['Id_Plato'])) {
 
     </div> <!-- /container -->
 
+
+    <footer id="footer" class="text-center text-lg-start bg-light text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div id="social" class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p id="fast">Copyright &copy; 2021 FastFood Spartan</p>
+          </div>
+          <div class="col-md-4">
+            <ul class="social-icons">
+              <a id="s1" rel="nofollow" href="https://www.facebook.com/Spartan-Fast-Food-103642148450759" target="_parent"><i class="fa fa-facebook"></i></a>
+              <a id="s2" href="https://www.instagram.com/spartan.22/"><i class="fa fa-instagram"></i></a>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <p id="fast">Designed by <em>UAC-ADS-II</em></p>
+          </div>
+        </div>
+      </div>
+  </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

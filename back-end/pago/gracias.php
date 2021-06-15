@@ -3,7 +3,7 @@ if (isset($_SESSION['carrito'])) {
   //Si el el producto existe en el carrito
   echo 'work';
   } else {
-    echo 'do not work';
+   // echo 'do not work';
     //die;
   // header('Location: ../../index.php');
   }
@@ -26,9 +26,17 @@ if (isset($_SESSION['carrito'])) {
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <link rel="stylesheet" href="design/css/diseño.css">
   </head>
-<body>
-  si selecciona envair por correo poner el correo
-    <h1>Gracias por comprar en fsat food spartan</h1>
-    <a class="btn btn-success" href="../../index.php" role="button">REGRESAR</a>
+<body class="m-0 row justify-content-center">
+<div id="cara" class="container col-auto p-5 text-center">
+  <br>
+  <div class="col-md-12">  
+    <h1><strong>Su pedido le llegará en la brevedad posible <br></strong> Gracias por realizar tu comprar en Fastfood Spartan</h1>
+  </div>
+    <div id="imagen" class="col-md-12 justify-content-center">
+      <a class="btn btn-success btn-lg" href="../../index.php" role="button" style="margin-bottom:15px;margin-top: 10px;">INICIO</a>
+      <br>
+      <img src="../upload/final.png" alt="" style="margin-bottom:15px;">
+    </div>
+</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'funciones.php';
 
@@ -13,8 +13,9 @@ require 'funciones.php';
   <title>FastFoodSpartan</title>
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <link rel="stylesheet" href="../cssb/footer.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/estilos.css">
   <script src="https://kit.fontawesome.com/74c4c07f2a.js" crossorigin="anonymous"></script>
@@ -26,7 +27,7 @@ require 'funciones.php';
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-    <!-- <a  id="" href="#" style="color:#fff;" class="navbar-brand scroll-top" target="_blank">FastFood Spartan</a> -->
+      <!-- <a  id="" href="#" style="color:#fff;" class="navbar-brand scroll-top" target="_blank">FastFood Spartan</a> -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -48,12 +49,12 @@ require 'funciones.php';
   </nav>
 
   <div class="container" id="main">
-<!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
+    <!-- MOSTRAR LA CARTA DE PLATOS PARA AÑADIR AL CARRITO -->
     <div class="row">
       <?php
       require 'vendor/autoload.php';
       $plato = new FastFood\Plato;
-      $info_platos = $plato->mostrar();//order by algo
+      $info_platos = $plato->mostrar(); //order by algo
       $cantidad = count($info_platos);
       if ($cantidad > 0) {
         for ($x = 0; $x < $cantidad; $x++) {
@@ -75,7 +76,7 @@ require 'funciones.php';
                 if (file_exists($foto)) {
                 ?>
                   <a href="carrito.php?Id_Plato=<?php print $item['Id_Plato']; ?>">
-                  <img style="width:325px; height:200px;" src="<?php print $foto; ?>" class="img-resposive" data-toggle="popover" data-trigger="hover" data-content="<?php echo $item['Descripcion']; ?>" href="">
+                    <img style="width:325px; height:200px;" src="<?php print $foto; ?>" class="img-resposive" data-toggle="popover" data-trigger="hover" data-content="<?php echo $item['Descripcion']; ?>" href="">
                   </a>
                 <?php } else { ?>
                   <img src="assets/imagenes/not-found.jpg" class="img-resposive">
@@ -102,6 +103,26 @@ require 'funciones.php';
     </div>
 
   </div> <!-- /container -->
+
+  <footer id="footer" class="text-center text-lg-start bg-light text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div id="social" class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p id="fast">Copyright &copy; 2021 FastFood Spartan</p>
+          </div>
+          <div class="col-md-4">
+            <ul class="social-icons">
+              <a id="s1" rel="nofollow" href="https://www.facebook.com/Spartan-Fast-Food-103642148450759" target="_parent"><i class="fa fa-facebook"></i></a>
+              <a id="s2" href="https://www.instagram.com/spartan.22/"><i class="fa fa-instagram"></i></a>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <p id="fast">Designed by <em>UAC-ADS-II</em></p>
+          </div>
+        </div>
+      </div>
+  </footer>
 
 
   <!-- Bootstrap core JavaScript

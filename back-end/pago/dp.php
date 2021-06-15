@@ -7,7 +7,7 @@ if (isset($_SESSION['carrito'])) {
 } else {
   echo 'do not work';
   //die;
-  // header('Location: ../../error.php');
+  //header('Location: ../../error.php');
 }
 //usar esta validacion en todas las paginas --> <meta http-equiv="X-UA-Compatible" content="IE=edge">
 ?>

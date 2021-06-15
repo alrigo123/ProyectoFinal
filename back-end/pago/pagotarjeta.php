@@ -3,9 +3,9 @@ session_start();
 
 if (isset($_SESSION['carrito'])) {  
 	//Si el el producto existe en el carrito
-	echo 'work';
+	//echo 'work';
 	} else {
-	  echo 'do not work';
+	  //echo 'do not work';
 	  //die;
 	  header('Location: ../../error.php');
 	}

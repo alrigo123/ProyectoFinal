@@ -5,9 +5,9 @@ require 'funciones.php';
 if (isset($_SESSION['carrito'])) {
   echo 'work';
 } else {
-  echo 'do no work';
-  die;
-  //header('Location: ../error.php');
+  //echo 'do no work';
+ // die;
+  header('Location: ../error.php');
 }
 
 ?>
@@ -27,6 +27,7 @@ if (isset($_SESSION['carrito'])) {
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/estilos.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 	  <link rel="stylesheet" href="assets/css/contact-form.css" type="text/css">
     <link href="favicon.html" rel="icon">
     <script src="https://kit.fontawesome.com/74c4c07f2a.js" crossorigin="anonymous"></script>
@@ -103,6 +104,26 @@ if (isset($_SESSION['carrito'])) {
 
     </div> <!-- /container -->
 
+
+    <footer id="footer" class="text-center text-lg-start bg-light text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div id="social" class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p id="fast">Copyright &copy; 2021 FastFood Spartan</p>
+          </div>
+          <div class="col-md-4">
+            <ul class="social-icons">
+              <a id="s1" rel="nofollow" href="https://www.facebook.com/Spartan-Fast-Food-103642148450759" target="_parent"><i class="fa fa-facebook"></i></a>
+              <a id="s2" href="https://www.instagram.com/spartan.22/"><i class="fa fa-instagram"></i></a>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <p id="fast">Designed by <em>UAC-ADS-II</em></p>
+          </div>
+        </div>
+      </div>
+  </footer>
   <script>
     const btnConfirm = document.querySelectorAll('.btnConfirm')
 
@@ -117,6 +138,8 @@ if (btnConfirm){
     });
 }
   </script>
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
