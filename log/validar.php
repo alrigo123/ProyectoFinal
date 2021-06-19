@@ -6,7 +6,6 @@ $usuario = $_POST['Username'];
 $contraseña = $_POST['Contraseña'];
 $_SESSION['Username'] = $usuario;
 
-
 $conexion = mysqli_connect("localhost", "root", "", "proyectofastfood");
 
 $consulta = "SELECT*FROM administrador where Username='$usuario' and Contraseña='$contraseña'";
@@ -15,7 +14,6 @@ $resultado = mysqli_query($conexion, $consulta);
 $filas = mysqli_num_rows($resultado);
 
 if ($filas) {
-
   header("location:../back-end/templates/platos/indexGestion.php");
 } else {
 ?>

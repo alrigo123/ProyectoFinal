@@ -7,8 +7,8 @@ if (isset($_SESSION['Username'])) {
   // die;
 } else {
   echo "Do not wokr";
-  echo "No puede entrrar sin logearse primero";
-  die;
+  echo "No puede entrar sin logearse primero";
+  header('Location: ../../../error-log.php');
 }
 
 ?>
