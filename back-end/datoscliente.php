@@ -92,7 +92,7 @@ if (isset($_SESSION['carrito'])) {
                                     <textarea name="Direccion" class="form-control"  rows="4" required placeholder="Ingrese alguna referencia junto a la direccion de su domicilio... "></textarea>
                                 </div>
 
-                                <button id="icono-b" type="submit" class="btn btn-primary btn-block btnConfirm"><i id="icono-b" class="fas fa-check-circle"></i> Confirmar</button>
+                                <button id="icono-b" type="submit" class="btn btn-primary btn-block"><i id="icono-b" class="fas fa-check-circle"></i> Confirmar</button>
                                 <button id="icono-b" type="reset" class="btn btn-primary btn-block"><i class="fa fa-trash"></i> LIMPIAR</button>
                             </form>
                     </fieldset>

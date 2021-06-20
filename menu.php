@@ -3,19 +3,17 @@ include './layouts/header.php';
 ?>
 
 
-<section class="page-heading">
-  <div class="container">
+  <div class="container text-center" style="border: 1px none blue; color:#000000;">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" style="color:#000000;">
         <h1>Nuestros Platos</h1>
-        <p>Aqui encontraras la variedad de nuestros platos donde podras ecoger tu preferido</p>
+        <p>Aqui encontraras variedad de nuestros platos donde podras escoger tu preferido</p>
       </div>
     </div>
   </div>
-</section>
 
 <br>
-<section class="awSlider">
+<section class="awSlider" style="border: 1px none green;">
   <h2>Alitas & Mollejitas</h2><br>
   <div class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -28,21 +26,21 @@ include './layouts/header.php';
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="img/alitas (1).jpg">
-        <div class="carousel-caption">
-          <h2>Alitas BBQ con papitas andinas <br>S/.15.00</h2>
+        <img src="img/alitas.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Alitas BBQ con papitas andinas <br>S/.15.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/bufalo (1).jpg">
-        <div class="carousel-caption">
-          <h2>Alitas Bufalo con papitas andinas <br>S/.17.00</h2>
+        <img src="img/alitas buffalo.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Alitas Bufalo <br>S/.17.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/mollejas (1).jpg">
-        <div class="carousel-caption">
-          <h2>Alitas Bufalo con papitas andinas <br>S/.17.00</h2>
+        <img src="img/buffaloconpapas.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Alitas Bufalo con papitas andinas <br>S/.17.00</h3>
         </div>
       </div>
 
@@ -73,29 +71,29 @@ include './layouts/header.php';
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner text-center" role="listbox">
       <div class="item active">
-        <img src="img/salchipapa (1).jpg">
-        <div class="carousel-caption">
-          <h2>Salchipapas clasica <br>S/.7.00</h2>
+        <img src="img/salchipapaclasica.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Salchipapas clasica <br>S/.7.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/salchicucho.jpg">
-        <div class="carousel-caption">
-          <h2>Salchipapas con anticucho de la casa <br>S/.13.00</h2>
+        <img src="img/Santicucho.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Salchipapas con anticucho de la casa <br>S/.13.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/salchigesa.jpg">
-        <div class="carousel-caption">
-          <h2>Salchippas con hamburguesa de 150gr <br>S/.18.00</h2>
+        <img src="img/salchiburguer.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Salchippas con hamburguesa de 150gr <br>S/.18.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/choripapa.jpg">
-        <div class="carousel-caption">
-          <h2>Choripapa <br>S/.10.00</h2>
+        <img src="img/choripapas.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Choripapa <br>S/.10.00</h3>
         </div>
       </div>
 
@@ -127,21 +125,22 @@ include './layouts/header.php';
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="img/anticucho.jpg">
-        <div class="carousel-caption">
-          <h2>Anticuho de corazon con papitas andinas <br>S/.10.00</h2>
+        <img src="img/anticuchocorazon.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Anticuho de corazon con papitas andinas <br>S/.10.00</h3>
+
         </div>
       </div>
       <div class="item">
-        <img src="img/anticuchosdepollo.jpg">
-        <div class="carousel-caption">
-          <h2>Anticucho de pollo con papitas andinas <br>S/.8.00</h2>
+        <img src="img/anticucho de pollo.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Anticucho de pollo con papitas andinas <br>S/.8.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/angus.jpg">
-        <div class="carousel-caption">
-          <h2>Anticucho de carne angus con papitas andinas <br>S/.15.00</h2>
+        <img src="img/anticucho.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Anticucho de carne angus con papitas andinas <br>S/.15.00</h3>
         </div>
       </div>
 
@@ -173,21 +172,21 @@ include './layouts/header.php';
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="img/100gr.jpg">
-        <div class="carousel-caption">
-          <h2>Hamburgues de 100gr con papitas andinas <br>S/.13.00</h2>
+        <img src="img/100 gramos.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Hamburgues de 100gr con papitas andinas <br>S/.13.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/150gr.jpg">
-        <div class="carousel-caption">
-          <h2>Hamburgues de 150gr con papitas andinas <br>S/.16.00</h2>
+        <img src="img/150.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Hamburgues de 150gr con papitas andinas <br>S/.16.00</h3>
         </div>
       </div>
       <div class="item">
-        <img src="img/200gr.jpg">
-        <div class="carousel-caption">
-          <h2>Hamburgues de 200gr con papitas andinas<br>S/.22.00</h2>
+        <img src="img/200.jpg" class="col-sm-4 col-sm-offset-4">
+        <div class="carousel">
+          <h3>Hamburgues de 200gr con papitas andinas<br>S/.22.00</h3>
         </div>
       </div>
 

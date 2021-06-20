@@ -2,28 +2,16 @@
 include './layouts/header.php';
 ?>
 
-<section class="page-heading">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Contact Us</h1>
-                <p>Whatever drinking vinegar hella fingerstache shoreditch kickstarter kitsch. La croix hella iceland flexitarian letterpress.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
 <section class="contact-us">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="section-heading contact-info">
-                    <h2>Contact Info</h2>
-                    <p>Pellentesque nec orci in erat venenatis viverra. Vivamus in lorem et leo feugiat ullamcorper. Donec volutpat fermentum erat non aliquet. Cras fermentum, risus a blandit sodales, erat turpis eleifend lacus, venenatis mollis leo lorem vel eros. Quisque et sem tempus, feugiat urna iaculis, tempor metus.<br><br><em>Urb. Ttio 3er paradero U1-20<br>Cusco-Peru</em></p>
+                    <h2>Encuentranos</h2>
+                    <p>FastFood Spartan se encuntra en el 3er Paradero de Ttio , cerca al colegio Sagrado Corazón de Jesús , ven y prueba
+                    la variedad de platillos que tenemos para ti.<br><br><em>Urb. Ttio 3er paradero U1-20<br>Cusco-Peru</em></p>
                 </div>
             </div>
         </div>
