@@ -42,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         header('Location: dp.php');
     }else{
-        header('Location: ../../error.php');
-        echo 'ERROR';
+      //  header('Location: ../../error.php');
+       // echo 'ERROR';
+       header('Location: dp.php');
     }
 }
