@@ -41,7 +41,7 @@ class Pago
         return false;
     }
 
-    
+
     //---------------------------------------------
 
 
@@ -68,14 +68,14 @@ class Pago
 
 
 
-    
+
     //---------------------------------------------
 
 
 
 
     //este puede ser con id de cliente
-//vamos a mostrar solo el tipo de pago
+    //vamos a mostrar solo el tipo de pago
     public function mostrarPago()
     {
         $sql = "SELECT t.Id_Pago,t.IdPedido,t.Total,t.FechaPago,t.TipoPago FROM pago t WHERE t.Id_Pago = ( SELECT MAX( Id_Pago ) FROM pago)";
@@ -105,14 +105,14 @@ class Pago
     }
 
 
-//mostrar detalle pago
+    //mostrar detalle pago
 
 
 
 
 
 
-    
+
     //este tambien puede ser
     public function mostrarDetallePedido()
     {
@@ -151,14 +151,14 @@ class Pago
 
 
 
-    public function mostrarCorreo(){
+    public function mostrarCorreo()
+    {
         $sql = "SELECT t.Id_Cliente,t.Nombre,t.Apellido,t.Celular,t.Direccion, t.Correo FROM cliente t WHERE t.Id_Cliente = ( SELECT MAX( Id_Cliente ) FROM cliente)";
-        
+
         $resultado = $this->cn->prepare($sql);
         if ($resultado->execute())
-        return  $resultado->fetchAll();
+            return  $resultado->fetchAll();
 
-    return false;
+        return false;
     }
-
 }
